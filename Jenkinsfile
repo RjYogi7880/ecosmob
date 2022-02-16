@@ -21,6 +21,6 @@ node{
   }
   stage('creating docker container')
   {
-    sh 'docker run -d -p 9090:80 --name apacheserver manjuvkp/apache2'
+    sh 'docker run -d -p 9090:80 --name apacheservers manjuvkp/apache2'
   }
 }
