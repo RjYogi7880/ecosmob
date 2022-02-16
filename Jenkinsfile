@@ -11,4 +11,16 @@ node{
   {
     sh 'docker build -t manjuvkp/apache2 .'
   }
+  stage('login to the docker hub')
+  {
+    sh 'docker login -u manjuvkp -p Manjuanu@12'
+  }
+  stage('pushing docker image')
+  {
+    sh 'docker push manjuvkp/apache2'
+  }
+  stage('creating docker container')
+  {
+    sh 'docker run -d -p 9090:80 --name apacheserver manjuvkp/apache2'
+  }
 }
