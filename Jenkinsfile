@@ -1,7 +1,7 @@
 node{
   stage('checkout')
   {
-    git url:'',branch:'main'
+    git url:'https://github.com/ECOSMOB-tech/freestyle.git',branch:'main'
   }
   stage('build docker image')
   {
