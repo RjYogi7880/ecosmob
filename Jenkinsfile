@@ -9,7 +9,7 @@ node{
   }
   stage('build docker image')
   {
-    sh 'docker build -t manjuvkp/apache2:1.'
+    sh 'docker build -t manjuvkp/apache2:1 .'
   }
   stage('login to the docker hub')
   {
