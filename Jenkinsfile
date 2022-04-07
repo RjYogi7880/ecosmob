@@ -7,20 +7,21 @@ node{
   {
     sh 'cat manju.txt'
   }
-  stage('build docker image')
-  {
-    sh 'docker build -t yogi7880/apacherj:rj .'
-  }
   stage('login to the docker hub')
   {
-    sh 'docker login -u yogi7880 -p 13b21a0554'
+    sh 'sudo docker login -u yogi7880 -p 13b21a0554'
   }
+  stage('build docker image')
+  {
+    sh 'sudo docker build -t yogi7880/apacherj:rj .'
+  }
+ 
   stage('pushing docker image')
   {
-    sh 'docker push yogi7880/apacherj'
+    sh 'sudo docker push yogi7880/apacherj'
   }
   stage('creating docker container')
   {
-    sh 'docker run -d -p 9090:80 --name apacheservers1 yogi7880/apacherj'
+    sh 'sudo docker run -d -p 9090:80 --name apacheservers1 yogi7880/apacherj'
   }
 }
