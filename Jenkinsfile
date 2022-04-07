@@ -1,4 +1,4 @@
-node{
+node ('rajunique') {
   stage('checkout')
   {
     git url:'https://github.com/ECOSMOB-tech/freestyle.git',branch:'main'
