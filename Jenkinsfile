@@ -1,7 +1,7 @@
 node ('rajunique') {
   stage('checkout')
   {
-    git url:'https://github.com/ECOSMOB-tech/freestyle.git',branch:'main'
+    git url:'https://github.com/RjYogi7880/ecosmob.git',branch:'main'
   }
   stage('showing content')
   {
