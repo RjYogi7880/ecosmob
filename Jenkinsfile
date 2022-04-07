@@ -9,18 +9,18 @@ node{
   }
   stage('build docker image')
   {
-    sh 'docker build -t manjuvkp/apache2:1 .'
+    sh 'docker build -t yogi7880/apache2:1 .'
   }
   stage('login to the docker hub')
   {
-    sh 'docker login -u manjuvkp -p Manjuanu@12'
+    sh 'docker login -u yogi7880 -p 13b21a0554'
   }
   stage('pushing docker image')
   {
-    sh 'docker push manjuvkp/apache2'
+    sh 'docker push yogi7880/apache2'
   }
   stage('creating docker container')
   {
-    sh 'docker run -d -p 9090:80 --name apacheservers1 manjuvkp/apache2'
+    sh 'docker run -d -p 9090:80 --name apacheservers1 yogi7880/apache2'
   }
 }
