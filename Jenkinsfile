@@ -9,7 +9,7 @@ node{
   }
   stage('build docker image')
   {
-    sh 'sudo docker build -t yogi7880/apache2:1 .'
+    sh 'sudo docker build -t yogi7880/apacherj:rj .'
   }
   stage('login to the docker hub')
   {
@@ -17,10 +17,10 @@ node{
   }
   stage('pushing docker image')
   {
-    sh 'sudo docker push yogi7880/apache2'
+    sh 'sudo docker push yogi7880/apacherj'
   }
   stage('creating docker container')
   {
-    sh 'sudo docker run -d -p 9090:80 --name apacheservers1 yogi7880/apache2'
+    sh 'sudo docker run -d -p 9090:80 --name apacheservers1 yogi7880/apacherj'
   }
 }
