@@ -7,18 +7,18 @@ node ('rajunique') {
   {
     sh 'cat manju.txt'
   }
+ 
+  stage('build docker image')
+  {
+    sh 'docker build -t yogi7880/apacherj:rj .'
+  }
   stage('login to the docker hub')
   {
     sh 'docker login -u yogi7880 -p 13b21a0554'
-  }
-  stage('build docker image')
-  {
-    sh 'sudo docker build -t yogi7880/apacherj:rj .'
-  }
- 
+  } 
   stage('pushing docker image')
   {
-    sh 'sudo docker push yogi7880/apacherj'
+    sh 'docker push yogi7880/apacherj'
   }
   stage('creating docker container')
   {
