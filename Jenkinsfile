@@ -9,7 +9,7 @@ node{
   }
   stage('login to the docker hub')
   {
-    sh 'sudo docker login -u yogi7880 -p 13b21a0554'
+    sh 'docker login -u yogi7880 -p 13b21a0554'
   }
   stage('build docker image')
   {
