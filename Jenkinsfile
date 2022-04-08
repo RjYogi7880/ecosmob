@@ -18,10 +18,10 @@ node ('rajunique') {
   } 
   stage('pushing docker image')
   {
-    sh 'docker push yogi7880/apacherj'
+    sh 'docker push yogi7880/apacherj:rj'
   }
   stage('creating docker container')
   {
-    sh 'sudo docker run -d -p 9090:80 --name apacheservers1 yogi7880/apacherj'
+    sh 'sudo docker run -d -p 9090:80 --name apacheservers1 yogi7880/apacherj:rj'
   }
 }
